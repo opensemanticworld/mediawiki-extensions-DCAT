@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Simon Stier"
+		]
+	},
+	"ext-dcat-desc": "Exports Semantic Mediawiki content as dcat:Catalog",
+	"ext-dcat-name": "DCAT",
+	"apihelp-catalog-summary": "Exports Semantic Mediawiki content as dcat:Catalog",
+	"apihelp-catalog-param-rdf_format": "Serialization format of the returned RDF",
+	"apihelp-catalog-example-1": "Returns the catalog as JSON-LD",
+	"apierror-catalog-unknownformat": "RDF format '$1' not supported. Supported are 'turtle', 'jsonld'"
+}

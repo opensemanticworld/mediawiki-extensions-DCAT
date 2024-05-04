@@ -1,0 +1,6 @@
+{
+    "require": {
+		"sweetrdf/easyrdf": ">=1.1",
+		"ml/json-ld": ">=1.0"
+	}
+}

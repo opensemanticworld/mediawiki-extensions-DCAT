@@ -1,0 +1,31 @@
+{
+	"name": "DCAT",
+	"version": "0.0.1",
+	"author": [
+		"Simon Stier"
+	],
+	"url": "https://github.com/opensemanticworld/mediawiki-extensions-DCAT",
+	"descriptionmsg": "ext-dcat-desc",
+	"namemsg": "ext-dcat-name",
+	"license-name": "AGPL v3",
+	"type": "semantic",
+	"requires": {
+		"MediaWiki": ">= 1.35",
+		"extensions": {
+			"SemanticMediaWiki": "*"
+		}
+	},
+    "MessagesDirs": {
+		"DCAT": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"ApiCatalog": "includes/api/Catalog.php"
+	},
+	"APIModules": {
+		"catalog": {
+			"class": "ApiCatalog"
+		}
+	}
+}
