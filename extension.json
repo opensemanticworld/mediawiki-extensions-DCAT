@@ -22,6 +22,7 @@
 		]
 	},
 	"AutoloadClasses": {
+		"ApiLinkedDataExport": "includes/api/LinkedDataExport.php",
 		"ApiCatalog": "includes/api/Catalog.php"
 	},
 	"APIModules": {
