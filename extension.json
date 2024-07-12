@@ -23,11 +23,15 @@
 	},
 	"AutoloadClasses": {
 		"ApiLinkedDataExport": "includes/api/LinkedDataExport.php",
-		"ApiCatalog": "includes/api/Catalog.php"
+		"ApiCatalog": "includes/api/Catalog.php",
+		"ApiOntology": "includes/api/Ontology.php"
 	},
 	"APIModules": {
 		"catalog": {
 			"class": "ApiCatalog"
+		},
+		"ontology": {
+			"class": "ApiOntology"
 		}
 	}
 }
