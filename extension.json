@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "DCAT",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"author": [
 		"Simon Stier"
 	],
@@ -16,7 +16,7 @@
 			"SemanticMediaWiki": "*"
 		}
 	},
-    "MessagesDirs": {
+	"MessagesDirs": {
 		"DCAT": [
 			"i18n"
 		]
