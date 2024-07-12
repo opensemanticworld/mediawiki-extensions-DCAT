@@ -139,7 +139,7 @@ abstract class ApiLinkedDataExport extends ApiBase {
 		return $printer;
 	}
 
-    /**
+	/**
 	 * @return string # Example: "CONSTRUCT {?s ?p ?o. ?s <http://test.com/test> '{{SERVER}}'} WHERE {?s ?p ?o} LIMIT 10";
 	 */
 	abstract protected function getSparqlConstructQuery( $param );
@@ -187,6 +187,7 @@ abstract class ApiLinkedDataExport extends ApiBase {
 			"dspace": "https://w3id.org/dspace/2024/1/"
 		}';
 		if ($format==='jsonld') $res = json_encode(\ML\JsonLD\JsonLD::compact(json_decode($res), json_decode($context)));
+		if ($format==='turtle') $res = preg_replace('/, \[ \]/u', "", $res); // remove empty bnodes "[ ]" that occur on class without restrictions
 
 		// see https://doc.wikimedia.org/mediawiki-core/master/php/classApiFormatRaw.html#ac7a8488b591600333637c57c6c057a8d
 		$result = $this->getResult();
