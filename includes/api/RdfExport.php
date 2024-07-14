@@ -111,7 +111,7 @@ class CustomSparqlClient extends \EasyRdf\Sparql\Client {
  * @ingroup API
  * @emits error.code timedtext-notfound, invalidlang, invalid-title
  */
-abstract class ApiLinkedDataExport extends ApiBase {
+abstract class ApiRdfExport extends ApiBase {
 
 	/** @var RepoGroup */
 	private $repoGroup;
@@ -162,7 +162,7 @@ abstract class ApiLinkedDataExport extends ApiBase {
 			: $params['rdf_format'];
 
 		if ( !array_key_exists( $format, $formats ) ) {
-			$this->dieWithError( 'apierror-catalog-unknownformat', $format );
+			$this->dieWithError( 'apierror-rdfexport-unknownformat', $format );
 		}
 
 		#$graphStore = new \EasyRdf\Graph($GLOBALS['smwgSparqlEndpoint']['query']);
@@ -187,13 +187,12 @@ abstract class ApiLinkedDataExport extends ApiBase {
 			"dspace": "https://w3id.org/dspace/2024/1/"
 		}';
 		if ($format==='jsonld') $res = json_encode(\ML\JsonLD\JsonLD::compact(json_decode($res), json_decode($context)));
-		if ($format==='turtle') $res = preg_replace('/(, )?\[[\s]*\](, )?/u', "", $res); // remove empty bnodes "[ ]" that occur on class without restrictions
 
 		// see https://doc.wikimedia.org/mediawiki-core/master/php/classApiFormatRaw.html#ac7a8488b591600333637c57c6c057a8d
 		$result = $this->getResult();
 		$result->addValue( null, 'text', $res );
 		$result->addValue( null, 'mime', $formats[$format]['mime']);
-		$result->addValue( null, 'filename', 'catalog.' . $formats[$format]['extension']);
+		$result->addValue( null, 'filename', 'export.' . $formats[$format]['extension']);
 	}
 
 	/**

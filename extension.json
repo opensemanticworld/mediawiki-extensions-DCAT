@@ -1,13 +1,13 @@
 {
 	"manifest_version": 2,
-	"name": "DCAT",
-	"version": "0.1.0",
+	"name": "RdfExport",
+	"version": "0.2.0",
 	"author": [
 		"Simon Stier"
 	],
-	"url": "https://github.com/opensemanticworld/mediawiki-extensions-DCAT",
-	"descriptionmsg": "ext-dcat-desc",
-	"namemsg": "ext-dcat-name",
+	"url": "https://github.com/opensemanticworld/mediawiki-extensions-RdfExport",
+	"descriptionmsg": "ext-rdfexport-desc",
+	"namemsg": "ext-rdfexport-name",
 	"license-name": "AGPL v3",
 	"type": "semantic",
 	"requires": {
@@ -22,16 +22,16 @@
 		]
 	},
 	"AutoloadClasses": {
-		"ApiLinkedDataExport": "includes/api/LinkedDataExport.php",
-		"ApiCatalog": "includes/api/Catalog.php",
-		"ApiOntology": "includes/api/Ontology.php"
+		"ApiRdfExport": "includes/api/RdfExport.php",
+		"ApiDcatCatalog": "includes/api/DcatCatalog.php",
+		"ApiOwlOntology": "includes/api/OwlOntology.php"
 	},
 	"APIModules": {
-		"catalog": {
-			"class": "ApiCatalog"
+		"rdfexport-dcat": {
+			"class": "ApiDcatCatalog"
 		},
-		"ontology": {
-			"class": "ApiOntology"
+		"rdfexport-owl": {
+			"class": "ApiOwlOntology"
 		}
 	}
 }

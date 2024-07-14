@@ -15,7 +15,7 @@ use ApiFormatRawFile;
  * @ingroup API
  * @emits error.code timedtext-notfound, invalidlang, invalid-title
  */
-class ApiCatalog extends ApiLinkedDataExport {
+class ApiDcatCatalog extends ApiRdfExport {
 
 	protected function getSparqlConstructQuery( $param ) {
 		$construct_sparql = "
@@ -62,8 +62,8 @@ class ApiCatalog extends ApiLinkedDataExport {
 	 */
 	protected function getExamplesMessages() {
 		return [
-			'action=catalog&rdf_format=jsonld'
-				=> 'apihelp-catalog-example-1',
+			'action=rdfexport-dcat&rdf_format=jsonld'
+				=> 'apihelp-rdfexport-dcat-example-1',
 		];
 	}
 

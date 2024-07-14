@@ -15,7 +15,7 @@ use ApiFormatRawFile;
  * @ingroup API
  * @emits error.code timedtext-notfound, invalidlang, invalid-title
  */
-class ApiOntology extends ApiLinkedDataExport {
+class ApiOwlOntology extends ApiRdfExport {
 
 	protected function getSparqlConstructQuery( $params ) {
 
@@ -49,7 +49,7 @@ class ApiOntology extends ApiLinkedDataExport {
 			{{ONTOLOGY}} rdf:type owl:Ontology .
 			{{ONTOLOGY}} dct:title ?olabel .
 			Category:OSW379d5a1589c74c82bc0de47938264d00 rdf:type owl:Class .
-			Category:OSW379d5a1589c74c82bc0de47938264d00 rdfs:label 'OwlClass' .
+			Category:OSW379d5a1589c74c82bc0de47938264d00 rdfs:label 'OwlThing' .
 			?c rdf:type owl:Class .
 			?c rdfs:label ?name .
 			?c rdfs:subClassOf ?supc .
@@ -96,8 +96,8 @@ class ApiOntology extends ApiLinkedDataExport {
 	 */
 	protected function getExamplesMessages() {
 		return [
-			'action=catalog&rdf_format=jsonld'
-				=> 'apihelp-catalog-example-1',
+			'action=rdfexport-owl&rdf_format=turtle&title=Item:OSWe9e86af83de842a68124d81c9792fe22'
+				=> 'apihelp-rdfexport-owl-example-1',
 		];
 	}
 
