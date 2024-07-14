@@ -6,7 +6,7 @@ use ApiResult;
 use Wikimedia\ParamValidator\ParamValidator;
 use ApiFormatRawFile;
 
-// we need to patch this class, see https://github.com/sweetrdf/easyrdf/issues/47
+// we need to patch this class for sweetrdf/easyrdf < 1.14.1, see https://github.com/sweetrdf/easyrdf/issues/47
 class CustomSparqlClient extends \EasyRdf\Sparql\Client {
 
 	/**
