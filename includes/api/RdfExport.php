@@ -189,7 +189,7 @@ abstract class ApiRdfExport extends ApiBase {
 		if ($format==='jsonld') $res = json_encode(\ML\JsonLD\JsonLD::compact(json_decode($res), json_decode($context)));
 		if ($format==='turtle') {
 			$res = str_replace("<{$GLOBALS['wgServer']}/id/Category-3AOSW379d5a1589c74c82bc0de47938264d00>", "owl:Thing", $res); // replace placeholder
-			$res = preg_replace('/(, )?\[[\s]*\](, )?/u', "", $res); // remove empty bnodes "[ ]" that occur on class without restrictions
+			$res = preg_replace('/(, )?\[[\s]*\]/u', "", $res); // remove empty bnodes "[ ]" that occur on class without restrictions
 		}
 
 		// see https://doc.wikimedia.org/mediawiki-core/master/php/classApiFormatRaw.html#ac7a8488b591600333637c57c6c057a8d
